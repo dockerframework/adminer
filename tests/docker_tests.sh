@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DOCKER_IMAGE="dockerframework/adminer"
-DOCKER_TAG="4.6"
+DOCKER_TAG="4.6.2"
 
 #### Halt script on error
 set -e
