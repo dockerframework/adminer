@@ -15,5 +15,5 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./session/adminer:/sessions                       # volume for sessions
     environment:
-      - ADMINER_VERSION=4.6.2
+      - ADMINER_VERSION=4.6.3
       - INSTALL_MSSQL=false
