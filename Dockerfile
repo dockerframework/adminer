@@ -1,4 +1,4 @@
-ARG ADMINER_VERSION=4.6.3
+ARG ADMINER_VERSION=4.7.5
 FROM adminer:${ADMINER_VERSION}
 
 # ================================================================================================
