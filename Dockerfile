@@ -1,4 +1,4 @@
-ARG ADMINER_VERSION=4.7.8
+ARG ADMINER_VERSION=4.8.1
 FROM adminer:${ADMINER_VERSION}
 
 # ================================================================================================
@@ -35,7 +35,7 @@ RUN if [ ${INSTALL_MSSQL} = true ]; then \
   && pecl install pdo_sqlsrv-4.1.8preview sqlsrv-4.1.8preview \
   && echo "extension=sqlsrv.so" > /usr/local/etc/php/conf.d/20-sqlsrv.ini \
   && echo "extension=pdo_sqlsrv.so" > /usr/local/etc/php/conf.d/20-pdo_sqlsrv.ini \
-;fi
+  ;fi
 
 COPY rootfs/ /
 RUN chown -R adminer:adminer /var/www/html

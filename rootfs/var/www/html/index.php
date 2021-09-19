@@ -25,4 +25,4 @@
     }
 
     // Include original Adminer or Adminer Editor.
-    include "./adminer-4.7.8.php";
+    include "./adminer-4.8.1.php";
