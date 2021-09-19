@@ -13,16 +13,20 @@
         // Specify enabled plugins here.
         $plugins = array(
             // AdminerTheme has to be the last one!
-            new AdminerTheme(),
+            // new AdminerTheme(),
 
             // Color variant can by specified in constructor parameter.
             // new AdminerTheme("default-orange"),
             // new AdminerTheme("default-blue"),
             // new AdminerTheme("default-green"),
+            
+            new AdminerThemeOrange(),
+            // new AdminerThemeBlue(),
+            // new AdminerThemeGreen(),
         );
 
         return new AdminerPlugin($plugins);
     }
 
     // Include original Adminer or Adminer Editor.
-    include "./adminer-4.7.8.php";
+    include "./adminer-4.8.1.php";
