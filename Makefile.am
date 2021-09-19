@@ -1,5 +1,5 @@
 IMAGE = dockerframework/adminer
-TAG = 4.8.1
+TAG = latest
 
 clean-local:
 	docker rmi $(CLEAN_OPTIONS) $(IMAGE):$(TAG) || true
