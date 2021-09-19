@@ -1,4 +1,5 @@
-ARG ADMINER_VERSION=4.8.1
+ARG ADMINER_VERSION=${ADMINER_VERSION:-4.8.1}
+
 FROM adminer:${ADMINER_VERSION}
 
 # ================================================================================================
@@ -19,6 +20,7 @@ FROM adminer:${ADMINER_VERSION}
 #   - Vince Chu @vwchu
 #   - Huadong Zuo @zuohuadong
 # ================================================================================================
+ENV ADMINER_VERSION=${ADMINER_VERSION}
 
 MAINTAINER "Laradock Team <mahmoud@zalt.me>"
 
@@ -38,9 +40,15 @@ RUN if [ ${INSTALL_MSSQL} = true ]; then \
   ;fi
 
 COPY rootfs/ /
+
+RUN apk --update add --no-cache --virtual wget; sync
+RUN wget https://github.com/vrana/adminer/releases/download/v${ADMINER_VERSION}/adminer-${ADMINER_VERSION}.php; sync
+
 RUN chown -R adminer:adminer /var/www/html
+RUN chmod +x /var/www/html/*.php
 
 USER adminer
+WORKDIR /var/www/html
 
 # Add volume for sessions to allow session persistence
 VOLUME /sessions

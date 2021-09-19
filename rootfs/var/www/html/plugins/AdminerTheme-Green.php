@@ -7,7 +7,7 @@
  * @author Peter Knut
  * @copyright 2014-2015 Pematon, s.r.o. (http://www.pematon.com/)
  */
-class AdminerTheme
+class AdminerThemeGreen
 {
 	/** @var string */
 	private $themeName;
@@ -15,7 +15,7 @@ class AdminerTheme
 	/**
 	 * @param string $themeName File with this name and .css extension should be located in css folder.
 	 */
-	function AdminerTheme($themeName = "default-orange")
+	function AdminerThemeGreen($themeName = "default-green")
 	{
 		define("PMTN_ADMINER_THEME", true);
 		return $this->themeName = $themeName;
@@ -54,7 +54,7 @@ class AdminerTheme
 			<link rel="apple-touch-icon" href="images/touchIcon.png"/>
 		<?php endif; ?>
 
-		<link rel="stylesheet" type="text/css" href="css/<?php echo htmlspecialchars($this->themeName) ?>.css?">
+		<link rel="stylesheet" type="text/css" href="css/default-green.css?">
 
 		<script>
 			(function(window) {
@@ -87,7 +87,7 @@ class AdminerTheme
 		<?php
 
 		// Return false to disable linking of adminer.css and original favicon.
-		// Warning! This will stop executing head() function in all plugins defined after AdminerTheme.
+		// Warning! This will stop executing head() function in all plugins defined after AdminerThemeGreen.
 		return false;
 	}
 }
